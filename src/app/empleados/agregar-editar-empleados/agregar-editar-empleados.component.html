@@ -1,0 +1,50 @@
+<div class="container">
+
+    <div class="row mt-3">
+        <div class="col">
+            <h1>Agregar Empleados</h1>
+        </div>
+    </div>
+    <form [formGroup]="formulario" autocomplete="off" (ngSubmit)="guardar()" >
+        <div class="row">
+            <div class="col-6">            
+
+                <mat-form-field class="w-100">
+                    <mat-label>Nombre: </mat-label>
+                    <input matInput formControlName="nombre"  />
+                </mat-form-field>
+
+                <!--Verifica si ya fue modificado y si el campo contiene errores-->
+                <div *ngIf="(nombre?.dirty || nombre?.touched) && nombre?.errors">
+                    <mat-error *ngIf="nombre?.errors?.['required']">
+                        El nombre del empleado es requerido.
+                    </mat-error>
+                    <mat-error *ngIf="nombre?.errors?.['minlength']">
+                        El nombre del empleado debe contener como minimo 5 caracteres.
+                    </mat-error>
+                    <mat-error *ngIf="nombre?.errors?.['maxlength']">
+                        El nombre del empleado debe contener como máximo 100 caracteres.
+                    </mat-error>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <button mat-raised-button 
+                    color="primary"
+                    type="submit"
+                    [disabled]="formulario.invalid"
+                    class="me-5">
+                    Guardar <mat-icon>save</mat-icon>
+                </button>
+                <button mat-raised-button 
+                    color="secundary"
+                    [routerLink]="['/empleados']"
+                    type="button">
+                    Regresar <mat-icon>close</mat-icon>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+

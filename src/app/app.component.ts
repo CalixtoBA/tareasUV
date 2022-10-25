@@ -12,7 +12,7 @@ export class AppComponent {
   
   constructor(private servicioEmpleados:EmpleadoService,
               private servicioPeticionarios:PeticionarioService){
-    this.servicioEmpleados.get()
+    /*this.servicioEmpleados.get()
       .subscribe(empleado => {
         console.log(empleado);
     });
@@ -20,6 +20,6 @@ export class AppComponent {
     this.servicioPeticionarios.get()
       .subscribe(peticionario => {
         console.log(peticionario);
-    });
+    });*/
   }
 }
