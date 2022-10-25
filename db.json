@@ -1,0 +1,38 @@
+{
+    "empleado":[
+        {
+            "id":1,
+            "nombre":"Andres"
+        },
+        {
+            "id":2,
+            "nombre":"Armando"
+        },
+        {
+            "id":3,
+            "nombre":"Ana"
+        }
+    ],
+    "peticionario":[
+        {
+            "id":1,
+            "nombre": "Soto Montano Rafael"
+        },
+        {
+            "id":2,
+            "nombre": "Rivera Bautista Monica Grisel"
+        },
+        {
+            "id":3,
+            "nombre": "Fernandez Hernandez Yadira del Carmens"
+        },
+        {
+            "id":4,
+            "nombre": "Edgar Limon Castilla"
+        },
+        {
+            "id":5,
+            "nombre": "Morales del Valle Lady Diana"
+        }
+    ]
+}
