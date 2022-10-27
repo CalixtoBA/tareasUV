@@ -1,4 +1,6 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
+import { map, Observable, shareReplay } from 'rxjs';
 import { EmpleadoService } from './services/empleado.service';
 import { PeticionarioService } from './services/peticionario.service';
 
@@ -9,9 +11,16 @@ import { PeticionarioService } from './services/peticionario.service';
 })
 export class AppComponent {
   title = 'tareasUV';
+
+  isHandset$: Observable<boolean> = this.breakpointObserver
+  .observe(Breakpoints.Handset)
+  .pipe(
+    map(result => result.matches),
+    shareReplay()
+  );
   
-  constructor(private servicioEmpleados:EmpleadoService,
-              private servicioPeticionarios:PeticionarioService){
+  constructor(private breakpointObserver: BreakpointObserver/*private servicioEmpleados:EmpleadoService,
+              private servicioPeticionarios:PeticionarioService*/){
     /*this.servicioEmpleados.get()
       .subscribe(empleado => {
         console.log(empleado);
