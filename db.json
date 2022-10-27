@@ -35,5 +35,16 @@
       "nombre": "Morales del Valle Lady Diana"
     }
   ],
-  "users":[]
+  "users": [
+    {
+      "email": "lolololo@uv.mx",
+      "password": "$2a$10$0ER8h4iHcPe5v2FaeeTUnOt7gjIg3N8DilNhGpbKpgD1TYe.akobC",
+      "id": 1
+    },
+    {
+      "email": "jijijijiji@uv.mx",
+      "password": "$2a$10$Z1yp5Qp.f9pNFURE18nAkeMgXopeRX1uDVRR6WBk1R7Hn1A9I6qDm",
+      "id": 2
+    }
+  ]
 }

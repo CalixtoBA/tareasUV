@@ -1,19 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 @Component({
-  selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-export class RegistroComponent implements OnInit {
+export class LoginComponent implements OnInit {
   formulario!:FormGroup;
 
   constructor( private servicioRegistro:AuthService,
-    private snackBar:MatSnackBar,
     private router:Router
      ) { }
 
@@ -27,17 +25,15 @@ export class RegistroComponent implements OnInit {
         validators:[Validators.required,Validators.minLength(4)],
         nonNullable:true
       })
-    });
+    })          
   }
 
-  register(){
+  login(){
     this.servicioRegistro
-    .register(this.formulario.value)
+    .login(this.formulario.value)
     .subscribe(response=>{
-      this.snackBar.open('Usuario registrador exitosamente','',{
-        duration:5000
-      });
-      this.router.navigate(['/login'])
+      console.log(response);
+      this.router.navigate(['/empleados'])
     })
   }
 

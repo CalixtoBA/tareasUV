@@ -6,35 +6,27 @@
       <mat-toolbar>Menu</mat-toolbar>
 
     <mat-nav-list>
-        <a mat-list-item routerLink="/empleados">
+        <a mat-list-item routerLink="/empleados"
+          *ngIf="authService.isLoggedIn$ | async">
             <i class="fa-solid fa-layer-group"></i> Empleado
         </a>
-        <a mat-list-item routerLink="/peticionarios">
+        <a mat-list-item routerLink="/peticionarios"
+        *ngIf="authService.isLoggedIn$ | async">
             <i class="fa-solid fa-layer-group"></i> Peticionario
         </a>
-        <a mat-list-item routerLink="/register">
+        <a mat-list-item routerLink="/register"
+          *ngIf="authService.isLoggedOut$ | async">
             <i class="fa-solid fa-user"></i> Registrarse
         </a>
-        <a mat-list-item routerLink="/login">
+        <a mat-list-item routerLink="/login"
+        *ngIf="authService.isLoggedOut$ | async">
           <i class="fa-solid fa-user"></i> Iniciar sesión
         </a>
-      <!--<a mat-list-item routerLink="/categorias"
-      *ngIf="authService.isLoggedIn$ | async">
-          <i class="fa-solid fa-layer-group"></i> Categorías
-      </a>
-      <a mat-list-item routerLink="/register" 
-        *ngIf="authService.isLoggedOut$ | async">
-          <i class="fa-solid fa-user"></i> Registrarse
-      </a>
-      <a mat-list-item routerLink="/login"
-        *ngIf="authService.isLoggedOut$ | async">
-        <i class="fa-solid fa-right-to-bracket"></i> Acceder
-      </a>
-      <a mat-list-item 
-        (click)="logout()"
-        *ngIf="authService.isLoggedIn$ | async">
-        <i class="fa-solid fa-door-open"></i> Salir
-      </a>-->
+        <a mat-list-item 
+          (click)="logout()"
+          *ngIf="authService.isLoggedIn$ | async">
+          <i class="fa-solid fa-door-open"></i> Salir
+        </a>
     </mat-nav-list>
 
     </mat-sidenav>

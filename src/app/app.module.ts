@@ -7,11 +7,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialDesignModule } from './shared/material-design/material-design.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegistroComponent } from './registro/registro.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegistroComponent
+    RegistroComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
